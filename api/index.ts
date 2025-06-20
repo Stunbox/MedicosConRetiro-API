@@ -32,7 +32,6 @@ app.post('/send',cors(corsOptions), async (req: Request, res: Response) => {
     .replace("{phone}",req.body.phone)
     .replace("{email}",req.body.email)
     .replace("{email2}",req.body.email)
-    .replace("{type_message}",req.body.typeMessage)
     .replace("{message}",req.body.message);
   try {
     const data = await resend.emails.send({

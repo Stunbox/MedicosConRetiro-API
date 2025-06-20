@@ -41,10 +41,6 @@ const emailTemplate =
                                       {phone}
                                     </p>
                                     <p>
-                                      <strong>Asunto</strong> <br>
-                                      {type_message}
-                                    </p>
-                                    <p>
                                       <strong>Correo</strong> <br>
                                       {email}
                                     </p>
