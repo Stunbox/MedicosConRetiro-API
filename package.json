@@ -1,0 +1,23 @@
+{
+  "name": "resend-express-example",
+  "private": true,
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "16.4.4",
+    "express": "^4.21.0",
+    "resend": "latest",
+    "typescript": "^5.5.3",
+    "undici-types": "^5.26.5",
+    "vercel": "^32.3.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "20.11.19",
+    "raw-loader": "^4.0.2"
+  }
+}
