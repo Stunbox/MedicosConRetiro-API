@@ -35,7 +35,8 @@ app.post('/send',cors(corsOptions), async (req: Request, res: Response) => {
   var templateUser = baseTemplate
     .replace("{dataAdmin}","")
     .replace("{userData}",emailUserMessage)
-    .replace("{username}",req.body.name);
+    .replace("{username}",req.body.name)
+    .replace("{email2}",req.body.email);
 
   var templateAdmin = baseTemplate
     .replace("{dataAdmin}",emailDataContact)
