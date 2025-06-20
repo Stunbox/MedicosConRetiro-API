@@ -39,8 +39,8 @@ app.post('/send',cors(corsOptions), async (req: Request, res: Response) => {
     .replace("{email2}",req.body.email);
 
   var templateAdmin = baseTemplate
+    .replace("{userData}","")
     .replace("{dataAdmin}",emailDataContact)
-    .replace("{userData}",emailUserMessage)
     .replace("{username}",req.body.name)
     .replace("{phone}",req.body.phone)
     .replace("{email}",req.body.email)
@@ -59,7 +59,7 @@ app.post('/send',cors(corsOptions), async (req: Request, res: Response) => {
     const dataClient = await resend.emails.send({
       from: 'noreply@medicosconretiro.com.mx',
       to: [req.body.email],
-      subject: "Gracias por comunicarte con el club",
+      subject: "Gracias por comunicarte con nosotros",
       html: templateUser,
     });
 
