@@ -28,7 +28,7 @@ app.get('/test',async (req:Request,res:Response) => {
 app.post('/send',cors(corsOptions), async (req: Request, res: Response) => {
 
   var template = emailTemplate
-    .replace("{userName}",req.body.name)
+    .replace("{username}",req.body.name)
     .replace("{phone}",req.body.phone)
     .replace("{email}",req.body.email)
     .replace("{email2}",req.body.email)
