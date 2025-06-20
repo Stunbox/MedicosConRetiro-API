@@ -8,77 +8,66 @@ const emailTemplate =
 </head>
 <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
 <center>
-<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" id="bodyTable" width="100%">
-    <tbody>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" id="bodyTable" width="100%">
+        <tbody>
         <tr>
             <td align="center" id="bodyCell" valign="top">
-            <table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
-                <tbody>
+                <table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
+                    <tbody>
                     <tr>
                         <td align="center" valign="top">
-                        <table border="0" cellpadding="0" cellspacing="0" id="templateHeader" width="100%">
-                            <tbody>
+                            <table border="0" cellpadding="0" cellspacing="0" id="templateHeader" width="100%">
+                                <tbody>
                                 <tr>
                                     <td class="headerContent" valign="top"><img alt="Parallax" id="headerImage" src="https://www.medicosconretiro.com.mx/medicos_retiro_mail.png" width="500" /></td>
                                 </tr>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
                         </td>
                     </tr>
                     <tr>
                         <td align="center" valign="top">
-                        <table border="0" cellpadding="0" cellspacing="0" id="templateBody" width="100%">
-                            <tbody>
+                            <table border="0" cellpadding="0" cellspacing="0" id="templateBody" width="100%">
+                                <tbody>
                                 <tr>
-                                  <td class="bodyContent" valign="top">
-                                    <p>Apreciable {username},</p>
-                                    <p>
-                                    ¡Gracias por su interes!, Un asesor se contactara con usted atravez de los siguientes datos:
-                                    </p>
+                                    <td class="bodyContent" valign="top">
+                                        <!-- Datos para el usuaio-->
+                                        {userData}
 
-                                    <p>
-                                      <strong>Telefono</strong> <br>
-                                      {phone}
-                                    </p>
-                                    <p>
-                                      <strong>Correo</strong> <br>
-                                      {email}
-                                    </p>
-                                    <p>
-                                      <strong>Mensaje</strong> <br>
-                                      {message}
-                                    </p>
-                                    <p>
-                                    <hr/>
-                                    <strong>Atentamente el equipo de Medicos con retiro</strong>
-                                    </p>
+                                        <!-- Datos para el admin-->
+                                        {dataAdmin}
+
+                                        <p>
+                                            <hr/>
+                                            <strong>Atentamente el equipo de Medicos con retiro</strong>
+                                        </p>
                                     </td>
                                 </tr>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
                         </td>
                     </tr>
                     <tr>
                         <td align="center" valign="top">
-                        <table border="0" cellpadding="0" cellspacing="0" id="templateFooter" width="100%">
-                            <tbody>
+                            <table border="0" cellpadding="0" cellspacing="0" id="templateFooter" width="100%">
+                                <tbody>
                                 <tr>
                                     <td class="footerContent" valign="top">
-                                    <p><strong>Email enviado a</strong><br />
-                                    {email2}</p>
-                                    <p>Más información en <a href="https://www.medicosconretiro.com.mx/" target="_blank">www.medicosconretiro.com.mx/</a></p>
+                                        <p><strong>Email enviado a</strong><br />
+                                            {email2}</p>
+                                        <p>Más información en <a href="https://www.medicosconretiro.com.mx/" target="_blank">www.medicosconretiro.com.mx/</a></p>
                                     </td>
                                 </tr>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
                         </td>
                     </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
             </td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </center>
 </body>
 </html>`;

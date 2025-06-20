@@ -3,7 +3,10 @@ require('dotenv').config()
 import { Resend } from 'resend';
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
+
 import emailTemplate from '../templates/emailTemplate';
+import emailUserMessage from '../templates/emailUserMessage';
+import emailDataContact from '../templates/emailContactData';
 
 const resend = new Resend('re_NPwxqQpj_29Srkb7P7on2wf2r1HqnvD4T');
 const app = express();
@@ -27,24 +30,35 @@ app.get('/test',async (req:Request,res:Response) => {
 //Send email
 app.post('/send',cors(corsOptions), async (req: Request, res: Response) => {
 
-  var template = emailTemplate
+  var baseTemplate= emailTemplate
+    
+  var templateUser = baseTemplate
+    .replace("{dataAdmin}","")
+    .replace("{userData}",emailUserMessage);
+
+  var templateAdmin = baseTemplate
+    .replace("{dataAdmin}",emailDataContact)
+    .replace("{userData}",emailUserMessage)
     .replace("{username}",req.body.name)
     .replace("{phone}",req.body.phone)
     .replace("{email}",req.body.email)
     .replace("{email2}",req.body.email)
     .replace("{message}",req.body.message);
   try {
+
+    //Mensaje a admin
     const data = await resend.emails.send({
       from: 'noreply@medicosconretiro.com.mx',
       to: ['ventas@sinergiaeneventos.com','eduardo@medicosconretiro.com.mx'],
       subject: req.body.name +" solicito informacion",
-      html: template,
+      html: templateAdmin,
     });
+    //Mensaje a usuario
     const dataClient = await resend.emails.send({
       from: 'noreply@medicosconretiro.com.mx',
       to: [req.body.email],
       subject: "Gracias por comunicarte con el club",
-      html: template,
+      html: templateUser,
     });
 
     res.status(200).json({"status":200,"data":{"idMessageToAgent": data, "idMessageToUser":dataClient}});
