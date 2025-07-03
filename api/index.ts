@@ -51,7 +51,7 @@ app.post('/send',cors(corsOptions), async (req: Request, res: Response) => {
     //Mensaje a admin
     const data = await resend.emails.send({
       from: 'noreply@medicosconretiro.com.mx',
-      to: ['ventas@sinergiaeneventos.com','eduardo@medicosconretiro.com.mx'],
+      to: ['ventas@sinergiaeneventos.com','eduardo@medicosconretiro.com.mx','difusion@medicosconretiro.site'],
       subject: req.body.name +" solicito informacion",
       html: templateAdmin,
     });
