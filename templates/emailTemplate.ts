@@ -39,7 +39,7 @@ const emailTemplate =
 
                                         <p>
                                             <hr/>
-                                            <strong>Atentamente el equipo de Medicos con retiro</strong>
+                                            <strong>Atentamente el equipo de Médicos con Retiro</strong>
                                         </p>
                                     </td>
                                 </tr>
