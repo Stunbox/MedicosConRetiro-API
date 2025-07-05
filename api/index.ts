@@ -16,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 let corsOptions = {
-  origin: [ 'http://localhost:4321/']
+  origin: [ 'http://localhost:4321/','https://www.medicosconretiro.com.mx/']
 };
 
 //index
